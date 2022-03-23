@@ -71,8 +71,8 @@ module.exports.indentity = identity;
  * 
  * parameter: any value, just name one
  * 
- * returns: a string with the data type of array, object, null, not a number(NaN), boolean, etc. Maybe the datatype as 'date'.
- * This way you know now.
+ * returns: a string representing the datatype of the input value
+ * 
  */
  function typeOf(value) {
   if (Array.isArray(value)) return 'array';
@@ -146,7 +146,7 @@ function indexOf(array, value) {
   }
   module.exports.indexOf = indexOf;
 /**
-* contains: Looks to see if a value is in an array.
+* contains: searches for a value in an array and returns a boolean if it exists
 * 
 * parameter: an array 
 * parameter: a value that may or may not be in the array
@@ -162,8 +162,7 @@ function contains(array, value) {
   }
   module.exports.contains = contains;
 /**
-* unique: Produces a duplicate-free version of the array, using === to test object equality. 
-* In particular only the first occurrence of each value is kept.
+* unique: Produces a duplicate-free version of the array. Or, if you will, it produces a new array with no duplicates.
 * 
 * parameter: an array
 * 
@@ -360,7 +359,7 @@ function some(collection, func) {
   }
   module.exports.some = some;
 /**
-* reduce: boils down a list of values into a new, single value
+* reduce: iterates through an array while calling a function on each iteration to accumulate a single return value
 * 
 * first parameter: an array 
 * second parameter: a function 
